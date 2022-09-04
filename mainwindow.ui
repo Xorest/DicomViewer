@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutAxl">
+        <item>
+         <widget class="QLabel" name="lblCurrentSliceAxl">
+          <property name="text">
+           <string>Slice: 0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QVTKOpenGLNativeWidget" name="qvtkopenGLWidgetAxl">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollBar" name="hScrollBarAxl">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutCor">
+        <item>
+         <widget class="QLabel" name="lblCurrentSliceCor">
+          <property name="text">
+           <string>Slice: 0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QVTKOpenGLNativeWidget" name="qvtkopenGLWidgetCor">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollBar" name="hScrollBarCor">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayoutSag">
+        <item>
+         <widget class="QLabel" name="lblCurrentSliceSag">
+          <property name="text">
+           <string>Slice: 0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QVTKOpenGLNativeWidget" name="qvtkopenGLWidgetSag">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollBar" name="hScrollBarSag">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout3D">
+        <item>
+         <widget class="QLabel" name="lblCurrentSlice3D">
+          <property name="text">
+           <string>Slice: 0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QVTKOpenGLNativeWidget" name="qvtkopenGLWidget3D">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollBar" name="hScrollBarSag3D">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>Open</string>
+     </property>
+     <addaction name="actionOpenDICOMSeries"/>
+     <addaction name="actionOpenDICOM"/>
+     <addaction name="actionOpenNII"/>
+    </widget>
+    <addaction name="menuOpen"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpenDICOMSeries">
+   <property name="text">
+    <string>DICOM Series</string>
+   </property>
+  </action>
+  <action name="actionOpenDICOM">
+   <property name="text">
+    <string>DICOM (*.dcm)</string>
+   </property>
+  </action>
+  <action name="actionOpenNII">
+   <property name="text">
+    <string>NII (*.nii)</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKOpenGLNativeWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>QVTKOpenGLNativeWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
